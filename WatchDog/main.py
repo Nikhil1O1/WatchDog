@@ -7,13 +7,14 @@ from record import record
 from PIL import Image, ImageTk
 from find_motion import find_motion
 from identify import maincall
+from main_remote import *
 
 
 
 window = tk.Tk()
 window.title("WATCHDOG")
 window.iconphoto(False, tk.PhotoImage(file='mn.png'))
-window.geometry('1080x700')
+window.geometry('1080x1920')
 window.config(bg='blue')
 
 frame1 = tk.Frame(window)
@@ -112,11 +113,15 @@ button1_canvas = canvas1.create_window( 560,380, anchor = "nw",window = btn6)
 
 btn5 = tk.Button(window, height=90, width=200, fg='red', command=window.destroy, image=btn5_image)
 btn5['font'] = btn_font
-button1_canvas = canvas1.create_window( 560,490, anchor = "nw",window = btn5)
+button1_canvas = canvas1.create_window( 450,490, anchor = "nw",window = btn5)
 
 btn7 = tk.Button(window, text="identify", height=90, width=200, fg="orange",command=maincall, compound='left', image=btn7_image)
 btn7['font'] = btn_font
 button1_canvas = canvas1.create_window( 770,380, anchor = "nw",window = btn7)
+
+btn8 = tk.Button(window, text="remote", height=90, width=200, fg="red",command=tele_intit, compound='left', image=btn7_image)
+btn7['font'] = btn_font
+button1_canvas = canvas1.create_window( 660,490, anchor = "nw",window = btn8)
 
 frame1.pack()
 window.mainloop()
