@@ -14,7 +14,7 @@ from main_remote import *
 window = tk.Tk()
 window.title("WATCHDOG")
 window.iconphoto(False, tk.PhotoImage(file='mn.png'))
-window.geometry('1080x1920')
+window.geometry('1300x700')
 window.config(bg='blue')
 
 frame1 = tk.Frame(window)
@@ -64,6 +64,10 @@ btn4_image = ImageTk.PhotoImage(btn4_image)
 btn7_image = Image.open('icons/recording.png')
 btn7_image = btn7_image.resize((50,50), Image.ANTIALIAS)
 btn7_image = ImageTk.PhotoImage(btn7_image)
+
+btn8_image = Image.open('icons/rem.png')
+btn8_image = btn8_image.resize((50,50), Image.ANTIALIAS)
+btn8_image = ImageTk.PhotoImage(btn8_image)
 
 bg = tk.PhotoImage(file = "icons/background.png")
 icon = Image.open('icons/watchdog.png')
@@ -119,8 +123,8 @@ btn7 = tk.Button(window, text="identify", height=90, width=200, fg="orange",comm
 btn7['font'] = btn_font
 button1_canvas = canvas1.create_window( 770,380, anchor = "nw",window = btn7)
 
-btn8 = tk.Button(window, text="remote", height=90, width=200, fg="red",command=tele_intit, compound='left', image=btn7_image)
-btn7['font'] = btn_font
+btn8 = tk.Button(window, text="remote", height=90, width=200, fg="red",command=tele_intit, compound='left', image=btn8_image)
+btn8['font'] = btn_font
 button1_canvas = canvas1.create_window( 660,490, anchor = "nw",window = btn8)
 
 frame1.pack()

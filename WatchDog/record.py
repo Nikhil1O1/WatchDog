@@ -43,7 +43,7 @@ def rem_record(stop_event=1):
         cv2.imshow("Record|WatchDog", frame)
 
 
-        if time.time() - start >= stop_event*10:    
+        if cv2.waitKey(1) == 27 or time.time() - start >= stop_event*10:    
             cap.release()
             cv2.destroyAllWindows()
             break

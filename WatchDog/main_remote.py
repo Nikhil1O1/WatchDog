@@ -1,9 +1,9 @@
 from mimetypes import init
 import tkinter as tk
 import tkinter.font as font
-from in_out import in_out
+#from in_out import in_out
 from motion import rem_noise
-from rect_noise import rect_noise
+#from rect_noise import rect_noise
 from record import rem_record
 from PIL import Image, ImageTk
 from find_motion import rem_find_motion

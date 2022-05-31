@@ -79,7 +79,7 @@ def find_motion():
 	return
 
 def rem_find_motion(stop_event = 1):
-	#start = time.time()
+	
 	motion_detected = False
 	is_start_done = False
 
@@ -95,7 +95,7 @@ def rem_find_motion(stop_event = 1):
 	frm1 = cv2.cvtColor(frm1, cv2.COLOR_BGR2GRAY)
 
 	start = time.time()
-	while True and time.time() - start >= stop_event*10:
+	while True:
 		_, frm2 = cap.read()
 		frm2 = cv2.cvtColor(frm2, cv2.COLOR_BGR2GRAY)
 
@@ -144,7 +144,7 @@ def rem_find_motion(stop_event = 1):
 		_, frm1 = cap.read()
 		frm1 = cv2.cvtColor(frm1, cv2.COLOR_BGR2GRAY)
 
-		if cv2.waitKey(1) == 27:
+		if cv2.waitKey(1) == 27 or time.time() - start >= stop_event*10:
 			break
 
 	return
